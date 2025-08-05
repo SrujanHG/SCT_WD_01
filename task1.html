@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Navigation Menu</title>
+    
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Custom styles to use the Inter font */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #111827; /* A dark background for the page content */
+            color: #F9FAFB;
+        }
+        /* Smooth transition for the navbar background */
+        .navbar-transition {
+            transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-100">
+
+    <!-- 
+      The Navigation Bar
+      - `fixed`: Keeps it at the top
+      - `w-full`: Makes it full width
+      - `top-0`, `left-0`: Positions it at the top-left corner
+      - `z-50`: Ensures it stays on top of other content
+      - `navbar-transition`: Custom class for smooth animations
+    -->
+    <nav id="navbar" class="fixed w-full top-0 left-0 z-50 navbar-transition">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="#home" class="text-white text-2xl font-bold tracking-wider">
+                    
+                    </a>
+                </div>
+
+                <!-- Desktop Menu Links -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#home" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                        <a href="#about" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About</a>
+                        <a href="#services" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Services</a>
+                        <a href="#contact" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu Button (Hamburger) -->
+                <div class="-mr-2 flex md:hidden">
+                    <button id="mobile-menu-button" type="button" class="bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+                        <span class="sr-only">Open main menu</span>
+                        <!-- Icon for menu open/close -->
+                        <svg id="hamburger-icon" class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                         <svg id="close-icon" class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu, show/hide based on menu state. -->
+        <div id="mobile-menu" class="md:hidden hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="#about" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">About</a>
+                <a href="#services" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Services</a>
+                <a href="#contact" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Content -->
+    <main>
+        <!-- Home Section -->
+        <section id="home" class="h-screen flex items-center justify-center bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3');">
+            <div class="text-center bg-black bg-opacity-50 p-8 rounded-lg">
+                <h1 class="text-5xl md:text-7xl font-extrabold text-white">Welcome to Our Site</h1>
+                <p class="text-xl md:text-2xl text-gray-200 mt-4">Scroll down to see the navigation bar in action.</p>
+            </div>
+        </section>
+
+        <!-- Dummy sections to create scrollable content -->
+        <section id="about" class="py-20 px-4">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-4xl font-bold text-center mb-8">About Us</h2>
+                <p class="text-lg text-gray-300 leading-relaxed">
+                    This is a demonstration of an interactive navigation menu. As you scroll down the page, you'll notice the navigation bar at the top changes its appearance. It starts transparent and becomes a solid, dark bar to ensure it remains visible and legible against the content below. This provides a seamless and user-friendly browsing experience. The menu is also fully responsive and will adapt to different screen sizes, with a hamburger menu for mobile devices.
+                </p>
+            </div>
+        </section>
+
+        <section id="services" class="py-20 px-4 bg-gray-800">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-4xl font-bold text-center mb-8">Our Services</h2>
+                <p class="text-lg text-gray-300 leading-relaxed">
+                    This section is just a placeholder to make the page longer. Having enough content is crucial to test the scroll functionality of the navigation bar. The hover effects on the menu items provide immediate feedback to the user, indicating that the links are clickable. This is a small but important detail in user interface design.
+                </p>
+            </div>
+        </section>
+
+        <section id="contact" class="py-20 px-4">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-4xl font-bold text-center mb-8">Contact Us</h2>
+                <p class="text-lg text-gray-300 leading-relaxed">
+                    You've reached the end of the page content. The fixed navigation menu remains accessible at the top, allowing you to easily navigate to any other section of the page without having to scroll all the way back up. This is the primary benefit of a fixed navigation bar.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Get references to the HTML elements we need to manipulate
+        const navbar = document.getElementById('navbar');
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const hamburgerIcon = document.getElementById('hamburger-icon');
+        const closeIcon = document.getElementById('close-icon');
+
+        // --- Scroll Effect ---
+        // Listen for the scroll event on the window
+        window.addEventListener('scroll', () => {
+            // Check if the user has scrolled more than 50 pixels vertically
+            if (window.scrollY > 50) {
+                // If scrolled, add classes to make the navbar solid and styled
+                navbar.classList.add('bg-gray-900/90', 'backdrop-blur-sm', 'shadow-lg');
+            } else {
+                // If at the top, remove the classes to make it transparent again
+                navbar.classList.remove('bg-gray-900/90', 'backdrop-blur-sm', 'shadow-lg');
+            }
+        });
+
+        // --- Mobile Menu Toggle ---
+        // Listen for a click on the hamburger menu button
+        mobileMenuButton.addEventListener('click', () => {
+            // Toggle the 'hidden' class on the mobile menu to show/hide it
+            mobileMenu.classList.toggle('hidden');
+            
+           
+            hamburgerIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('hidden');
+        });
+
+       
+        const mobileNavLinks = mobileMenu.querySelectorAll('a');
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                hamburgerIcon.classList.remove('hidden');
+                closeIcon.classList.add('hidden');
+            });
+        });
+
+    </script>
+</body>
+</html>
